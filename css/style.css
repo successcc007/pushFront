@@ -18,11 +18,13 @@ nav{width: 960px;margin:0 auto;border-bottom: 2px solid #666;padding-bottom: 8px
 nav ul li{float: right;margin-right: 30px;}
 nav ul li a{font-size:26px;font-weight: bold;font-family: 'Calibri';}
 nav ul li a.on,nav ul li a:hover{border-bottom: 2px solid #333;font-style: italic;}
+
 /*city select*/
-.citySelect{height: 350px;overflow: hidden;position: relative;width:960px;margin:40px auto 0;}
-.citySelect span {font-size: 20px;}
-.citySelect li{font-size: 25px;float:left;margin-right: 30px;height: 50px;line-height: 50px;}
+.citySelect{height: 120px;overflow: hidden;position: relative;width:960px;margin:20px auto 0;}
+.citySelect span {font-size: 25px;color: red;margin-top: 5px;display:inline-block;height: 35px;}
+.citySelect li{font-size: 25px;float:left;margin-right: 30px;height: 70px;line-height: 70px;}
 .citySelect li select{font-size: 15px;width: 100px;}
+.citySelect .btnSave{font-size: 25px;width: 140px;height: 35px;line-height: 35px;}
 
 /*banner*/
 .banner{height: 350px;overflow: hidden;position: relative;width:960px;margin:20px auto 0;}
