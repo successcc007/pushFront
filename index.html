@@ -33,43 +33,47 @@
     <ul>
         <li class="country">Country
             <select>
-                <option>
+                <option value="">select
                 </option>
             </select>
         </li>
         <li class="province">State
             <select>
-                <option>
-
+                <option value="">select
                 </option>
             </select>
         </li>
         <li class="city">City
             <select>
-                <option>
-
+                <option value="">select
                 </option>
             </select>
         </li>
     </ul>
 </div>
 <!--todu-->
-<div class="citySelect">
+<div class="citySelect stDiv">
     <span>Set Time</span>
     <ul>
         <li>StartTime
-            <input value="" id="startTime">
+            <span class="stSpan">hour</span>
+            <input value="" id="stHour" class="setTime">
+            <span  class="stSpan">minutue</span>
+            <input value="" id="stMinute" class="setTime">
         </li>
         <li>EndTime
-            <input value="" id="endTime">
+            <span class="stSpan">hour</span>
+            <input value="" id="etHour" class="setTime">
+            <span  class="stSpan">minutue</span>
+            <input value="" id="etMinute" class="setTime">
         </li>
         <li>interval
-            <input value="" id="interval">
+            <input value="" id="interval"  class="setTime"> (In minutes)
         </li>
     </ul>
 </div>
 <div class="citySelect">
-    <input type="button" value="save" class="btnSave">
+    <input type="button" value="save" class="btnSave" >
 </div>
 <div class="citySelect">
     <ul class="listSave">
@@ -77,7 +81,7 @@
     </ul>
 </div>
 <div class="citySelect">
-    <input  type="button" value="Start push" class="btnSave">
+    <input type="button" value="Start push" class="btnSave">
 </div>
 <!-- footer -->
 <footer>

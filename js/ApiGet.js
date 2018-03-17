@@ -8,8 +8,9 @@ function ajaxRequest(url, submitData, callback, method) {
         dataType: "json",
         data: submitData,
         success: function (result) {
-            console.log("ajaxrequest success");
             callback(result);
         }
     });
+    //console.log(url);
+    //console.log(submitData);
 }
