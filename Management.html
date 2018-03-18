@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Management</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
-
-
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/ApiGet.js"></script>
+    <script type="text/javascript" src="js/Jsindex.js"></script>
 </head>
 <body>
 
@@ -27,37 +28,34 @@
 </nav>
 
 <div class="citySelect">
-    <span>Select City</span>
+    <span>Set City</span>
     <ul>
-        <li>Country
+        <li class="country">Country
             <select>
-                <option>
-                    uk
+                <option value="">select
                 </option>
             </select>
         </li>
-        <li>State
+        <li class="province">State
             <select>
-                <option>
-                    uk
+                <option value="">select
                 </option>
             </select>
         </li>
-        <li>City
+        <li class="city">City
             <select>
-                <option>
-                    uk
+                <option value="">select
                 </option>
             </select>
         </li>
     </ul>
 </div>
 <div class="citySelect">
-    <input type="button" value="Confirm" class="btnSave">
+    <input type="button" value="Confirm" class="btnSave" id="btnM">
 </div>
-<div class="citySelect">
+<div class="citySelect listSave">
     <span>The List Of Server</span>
-    <ul class="listSave">
+    <ul class="listSave listSaveM">
         <!--the list of jishi-->
     </ul>
 </div>

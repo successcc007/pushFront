@@ -9,6 +9,8 @@ $(document).ready(function () {
     SchangeCountry();
     SchangeProvince();
     Save();
+    Confirm();
+    ListOfConfig();
 });
 
 /*获取国家*/
@@ -68,7 +70,7 @@ function SchangeProvince() {
 
 /* 省change回调,市数据填充*/
 function CalbProvinceClick(result) {
-    console.log(result);
+    //console.log(result);
     RemoveSelect("city");
     var len = result['info'].length;
     var select = $(".city select");
@@ -90,17 +92,17 @@ function RemoveSelect(select) {
 
 /*save click*/
 function Save() {
-    $(".btnSave").click(function () {
-        var country = $('.country select option:selected').val();
-        if (!country) {
-            alert("country can't be empty!");
-            return;
-        }
-        var province = $('.province select option:selected').val();
-        if (!province) {
-            alert("province can't be empty!");
-            return;
-        }
+    $("#btnIndex").click(function () {
+        /*  var country = $('.country select option:selected').val();
+         if (!country) {
+         alert("country can't be empty!");
+         return;
+         }
+         var province = $('.province select option:selected').val();
+         if (!province) {
+         alert("province can't be empty!");
+         return;
+         }*/
         var city = $('.city select option:selected').val();
         if (!city) {
             alert("city can't be empty!");
@@ -133,21 +135,76 @@ function Save() {
         }
         var url = URLBASE + "/autoPublish/save";
         var submitData = {
-            country: "country",
-            province: "province",
-            city: "city",
-            startTimeHour: "startTimeHour",
-            startTimeMinute: "startTimeMinute",
-            endTimeHour: "endTimeHour",
-            endTimeMinute: "endTimeMinute",
-            interval: "interval"
+            country: country,
+            province: province,
+            city: city,
+            startTimeHour: startTimeHour,
+            startTimeMinute: startTimeMinute,
+            endTimeHour: endTimeHour,
+            endTimeMinute: endTimeMinute,
+            interval: interval
         };
-        ajaxRequest(url, submitData, calbSave, "POST");
+        ajaxRequest(url, submitData, CalbSave, "POST");
     })
 }
+
 /*save callback*/
-function calbSave(result) {
-    //todu
+function CalbSave(result) {
+    console.log(result);
 }
+
+/*managememt confirm*/
+function Confirm() {
+    $("#btnM").click(function () {
+        var city = $('.city select option:selected').val();
+        if (!city) {
+            alert("city can't be empty!");
+            return;
+        }
+        var url = URLBASE + "/index/select/jsCity";
+        var submitData = {
+            city: city
+        };
+        ajaxRequest(url, submitData, CalbConfirm, "POST");
+    })
+}
+
+/*callback confirm*/
+function CalbConfirm(result) {
+    console.log(result);
+    var ul=$(".listSaveM");
+    var lenC=result['data'].length;
+    for(var i =0;i<lenC;i++){
+        var serverS = result['data'][i];
+        var lenS=serverS.length;
+        for(var j=0;j<lenS;j++){
+            ul.append("<li style='height: 40px;line-height: 40px;'>" +
+           "name:<span>"+serverS[j]['s_name']+"</span>&nbsp;&nbsp;age:<span>"+serverS[j]['i_age']+"</span>&nbsp;&nbsp;height:<span>"+serverS[j]['i_height']+"</span>&nbsp;&nbsp;price:<span>"+serverS[j]['i_price']+"</span>&nbsp;&nbsp;<input class='edit'  type='button'  value='edit' id="+serverS[j]['i_id']+"> </li><br>");
+        }
+    }
+}
+
+/*the list of config*/
+function ListOfConfig() {
+    var url = URLBASE + "/autoPublish/ConfigList";
+    var submitData = {};
+    ajaxRequest(url, submitData, CalbConfigList, "GET");
+}
+
+/*callback configlist*/
+function CalbConfigList(result) {
+    //console.log(result);
+    if (!result) {
+        return;
+    }
+    var len = result['data'].length;
+    var ul = $(".listSaveIndex");
+    for (var i = 0; i < len; i++) {
+        ul.append("<li>" +
+        "Country:<span>" + result['data'][i]['country'] + "</span>&nbsp;&nbsp; Province:<span>" + result['data'][i]['province'] + "</span> &nbsp;&nbsp;city:<span>" + result['data'][i]['city'] + "</span>&nbsp;&nbsp;&nbsp;&nbsp; from<span> " + result['data'][i]['startTimeHour'] + "</span>:<span>" + result['data'][i]['startTimeMinute'] + "</span> to<span> " + result['data'][i]['endTimeHour'] + "</span>:<span>" + result['data'][i]['endTimeMinute'] + "</span>&nbsp;&nbsp; interval: <span>" + result['data'][i]['intervalMinutes'] +
+        "</li>");
+    }
+}
+
 
 
