@@ -11,6 +11,7 @@ $(document).ready(function () {
     Save();
     Confirm();
     ListOfConfig();
+
 });
 
 /*获取国家*/
@@ -204,6 +205,13 @@ function CalbConfigList(result) {
         "Country:<span>" + result['data'][i]['country'] + "</span>&nbsp;&nbsp; Province:<span>" + result['data'][i]['province'] + "</span> &nbsp;&nbsp;city:<span>" + result['data'][i]['city'] + "</span>&nbsp;&nbsp;&nbsp;&nbsp; from<span> " + result['data'][i]['startTimeHour'] + "</span>:<span>" + result['data'][i]['startTimeMinute'] + "</span> to<span> " + result['data'][i]['endTimeHour'] + "</span>:<span>" + result['data'][i]['endTimeMinute'] + "</span>&nbsp;&nbsp; interval: <span>" + result['data'][i]['intervalMinutes'] +
         "</li>");
     }
+}
+
+/*edit的click*/
+function EditClick(){
+    $(".edit").live("click",function(){
+        //todu edit page
+    });
 }
 
 
