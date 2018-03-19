@@ -11,7 +11,7 @@ $(document).ready(function () {
     Save();
     Confirm();
     ListOfConfig();
-
+    EditClick();
 });
 
 /*获取国家*/
@@ -209,8 +209,9 @@ function CalbConfigList(result) {
 
 /*edit的click*/
 function EditClick(){
-    $(".edit").live("click",function(){
-        //todu edit page
+    $(".edit").on("click",function(){
+        var jid = $(this).attr("id");
+        window.location.href="ServerInfo.html?id=jid";
     });
 }
 
