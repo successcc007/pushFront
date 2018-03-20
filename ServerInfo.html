@@ -28,9 +28,9 @@
     <div class="clear"></div>
 </nav>
 
-<div class="citySelect">
+<div class="citySelect serverInfo">
     <span>Server Info</span>
-   <table>
+   <table border="1" cellspacing="0" cellpadding="0">
        <tr>
            <td>Name</td>
            <td><input type="text" value="" id="name"></td>
@@ -40,7 +40,9 @@
            <td><input type="text" value="" id="weigh"></td>
            <td>Height</td>
            <td><input type="text" value="" id="height"></td>
-           <td rowspan="2"></td>
+           <td rowspan="2" colspan="2">
+               <img src="" id="img" >
+           </td>
        </tr>
        <tr>
            <td>Cup</td>
@@ -64,11 +66,14 @@
            <td>Type</td>
            <td><input type="text" value="" id="type"></td>
        </tr>
-       <tr class="pic">
-
-       </tr>
    </table>
+    <div>
+        <ul class="pic">
+
+        </ul>
+    </div>
 </div>
+
 <div class="citySelect">
     <input type="button" value="Confirm" class="btnSave" id="btnM">
 </div>

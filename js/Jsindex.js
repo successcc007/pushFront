@@ -11,7 +11,6 @@ $(document).ready(function () {
     Save();
     Confirm();
     ListOfConfig();
-    EditClick();
 });
 
 /*获取国家*/
@@ -180,7 +179,7 @@ function CalbConfirm(result) {
         var lenS=serverS.length;
         for(var j=0;j<lenS;j++){
             ul.append("<li style='height: 40px;line-height: 40px;'>" +
-           "name:<span>"+serverS[j]['s_name']+"</span>&nbsp;&nbsp;age:<span>"+serverS[j]['i_age']+"</span>&nbsp;&nbsp;height:<span>"+serverS[j]['i_height']+"</span>&nbsp;&nbsp;price:<span>"+serverS[j]['i_price']+"</span>&nbsp;&nbsp;<input class='edit'  type='button'  value='edit' id="+serverS[j]['i_id']+"> </li><br>");
+           "name:<span>"+serverS[j]['s_name']+"</span>&nbsp;&nbsp;age:<span>"+serverS[j]['i_age']+"</span>&nbsp;&nbsp;height:<span>"+serverS[j]['i_height']+"</span>&nbsp;&nbsp;price:<span>"+serverS[j]['i_price']+"</span>&nbsp;&nbsp;<input class='edit'  type='button'  value='edit' onclick='EditClick(this)' id="+serverS[j]['i_id']+"> </li><br>");
         }
     }
 }
@@ -208,11 +207,10 @@ function CalbConfigList(result) {
 }
 
 /*edit的click*/
-function EditClick(){
-    $(".edit").on("click",function(){
-        var jid = $(this).attr("id");
-        window.location.href="ServerInfo.html?id=jid";
-    });
+function EditClick(btn){
+    var jid = btn["id"];
+    console.log(jid);
+    window.location.href="ServerInfo.html?id="+jid;
 }
 
 

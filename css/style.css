@@ -95,6 +95,11 @@ html[xmlns] .slides {display: block;}
 .contact_l_1 input.submit{width: 420px;height: 36px;border:none;background: #0987d7;font-size:16px;color:#fff;cursor: pointer;}
 .contact_r{float: right;}
 
+/*serverInfo*/
+.serverInfo{height: auto}
+.serverInfo td{height: 100px;font-size: 25px;padding: 0px;}
+.serverInfo input{height: 100%;font-size: 20px;width: 101px;color: #0987d7;text-align: center}
+.pic{margin-top: 20px;}
 
 
 /*footer*/
