@@ -97,9 +97,13 @@ html[xmlns] .slides {display: block;}
 
 /*serverInfo*/
 .serverInfo{height: auto}
+.serverInfo ul{height: auto;}
+.serverInfo li{height: auto;width: 120px;}
 .serverInfo td{height: 100px;font-size: 25px;padding: 0px;}
 .serverInfo input{height: 100%;font-size: 20px;width: 101px;color: #0987d7;text-align: center}
 .pic{margin-top: 20px;}
+.serverInfo .imgFile{width: 70px;height: 20px;font-size: 10px;}
+.serverInfo .picFile{width: 70px;height: 30px;font-size: 10px;}
 
 
 /*footer*/

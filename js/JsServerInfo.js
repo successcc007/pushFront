@@ -48,12 +48,17 @@ function CalbGetJsInfo(result){
 function CalbGetJsPic(result){
     var info=result["info"];
     var ul = $(".pic");
-    for(var i= 0,len =info.length;i<len;i++){
-        ul.append("<li style='text-align: center'> "+(i+1)+"</li>")
+    for(var i=info.length- 1,j=0;i>=0;i--){
+       // ul.append("<li style='text-align: center'> "+(i)+"</li>")
         ul.append("<li>" +
-        "<img style='width:120px;height=120px;' src='./images/"+info[i]['img_url']+"' >" +
+        "<img style='width:120px;height=120px;' src='./images/"+info[i]['img_url']+"' ><input type='file' class='picFile' name='"+info[i]['provider_id']+info[i]['i_id']+" '> " +
         "</li>");
+        j++;
     }
     console.log(info);
 
+}
+/*save btn*/
+function Save(){
+    //to du
 }
